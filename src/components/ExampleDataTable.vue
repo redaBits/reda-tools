@@ -1,5 +1,5 @@
 <template>
-  <DataTableCRUD 
+  <DataTableCRUD
     :table="table"
     :options="options"
     v-model="value"
@@ -80,41 +80,44 @@ export default {
                 { text: 'Fe (g)', value: 'fe' },
                 { text: 'P (g)', value: 'sodio' },
                 { text: 'K (g)', value: 'potasio' },
+                { text: 'Actions', value: 'actions', sortable: false },
               ],
               defaultItem: {
                 fe: 0,
                 sodio: 0,
                 potasio: 0,
               },
-              form: [
-                {
-                  id: '001',
-                  label: 'Fe',
-                  name: 'fe',
-                  value: 'fe',
-                  type: 'number',
-                  rules: 'required|numeric',
-                  cols: 6,
-                },
-                {
-                  id: '002',
-                  label: 'P',
-                  name: 'number',
-                  value: 'sodio',
-                  type: 'number',
-                  rules: 'required|numeric',
-                  cols: 6,
-                },
-                {
-                  id: '003',
-                  label: 'S',
-                  name: 'number',
-                  value: 'potasio',
-                  type: 'number',
-                  rules: 'required|numeric',
-                  cols: 6,
-                },
-              ],
+              form: {
+                inputs: [
+                  {
+                    id: '001',
+                    label: 'Fe',
+                    name: 'fe',
+                    value: 'fe',
+                    type: 'number',
+                    rules: 'required|numeric',
+                    cols: 6,
+                  },
+                  {
+                    id: '002',
+                    label: 'P',
+                    name: 'number',
+                    value: 'sodio',
+                    type: 'number',
+                    rules: 'required|numeric',
+                    cols: 6,
+                  },
+                  {
+                    id: '003',
+                    label: 'S',
+                    name: 'number',
+                    value: 'potasio',
+                    type: 'number',
+                    rules: 'required|numeric',
+                    cols: 6,
+                  },
+                ],
+              },
             },
             cols: 12,
           },
